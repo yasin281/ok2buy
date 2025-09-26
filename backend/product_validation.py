@@ -11,16 +11,33 @@ class ProductStatus(str, Enum):
     UNKNOWN = "unknown"
 
 
-def create_response(product_id: int) -> dict:
-    return {
-        "product_id": product_id,
-        "status": ProductStatus.LEGAL.value,
-        "laws": ["Example Law 1", "Example Law 2"]
-    }
+requiered_fields = ["product_code",
+                    "product_name", "product_description", "shop"]
+
+
+def create_response(product_info: dict, status: ProductStatus,
+                    laws: list) -> dict:
+    response = {}
+
+    for field in requiered_fields:
+        value = product_info.get(field, "N/A")
+        if field == "product_description":
+            value = [[v] if not isinstance(v, list) else v for v in value]
+
+        response[field] = value
+
+    response.update({
+        "status": status.value,
+        "laws": laws
+    })
+
+    return response
 
 
 def validate_product(product: int) -> dict:
     try:
-        return get_product_info(product)
+        product_info = get_product_info(product)
+        return create_response(product_info, ProductStatus.LEGAL,
+                               ["Law1", "Law2", "Law3"])
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))

@@ -1,7 +1,20 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from product_validation import validate_product
 
-app = FastAPI(title="SafeBuy Checker")
+app = FastAPI(title="ok2buy Backend API")
+
+origins = [
+    "http://127.0.0.1:8000",
+    "http://localhost:<your-frontend-port>",]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
