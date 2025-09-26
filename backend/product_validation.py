@@ -1,5 +1,8 @@
 from enum import Enum
 
+from fastapi import HTTPException
+from gather_product_info import get_product_info
+
 
 class ProductStatus(str, Enum):
     LEGAL = "legal"
@@ -17,4 +20,7 @@ def create_response(product_id: int) -> dict:
 
 
 def validate_product(product: int) -> dict:
-    return create_response(product)
+    try:
+        return get_product_info(product)
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
