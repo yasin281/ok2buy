@@ -48,8 +48,8 @@
           }
         ]
       },
-      "restricted": {
-        "description": "No restricted categories - radar warning devices are completely prohibited",
+      "permit_or_registration": {
+        "description": "No permit_or_registration categories - radar warning devices are completely prohibited",
         "items": []
       },
       "legal": {

@@ -28,7 +28,7 @@ def get_product_info(product_id: int) -> dict:
     return cleaned_response
 
 
-if __name__ == "__main__":
-    product_id = "601100205897374"
-    info = get_product_info(product_id)
-    print(f"Product Info: {info}")
+# if __name__ == "__main__":
+#     product_id = "601100205897374"
+#     info = get_product_info(product_id)
+#     print(f"Product Info: {info}")

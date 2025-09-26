@@ -31,7 +31,7 @@
           }
         ]
       },
-      "restricted": {
+      "permit_or_registration": {
         "description": "Currency movements subject to disclosure requirements or special conditions",
         "items": [
           {
@@ -58,10 +58,10 @@
         "description": "Currency movements allowed with minimal restrictions",
         "items": [
           {
-            "category": "Unrestricted cash movement",
+            "category": "Unpermit_or_registration cash movement",
             "description": "Foreign currency and securities carried into, through, and out of Switzerland",
             "conditions": "No amount limitations",
-            "benefits": ["No declaration obligation", "Unrestricted amounts allowed", "Free movement across borders"],
+            "benefits": ["No declaration obligation", "Unpermit_or_registration amounts allowed", "Free movement across borders"],
             "requirements": ["Must answer truthfully if questioned", "No proactive declaration needed"]
           },
           {
@@ -75,7 +75,7 @@
             "category": "Securities and financial instruments",
             "description": "Shares, bonds, and cheques carried across borders",
             "conditions": "Same rules as cash apply",
-            "benefits": ["Unrestricted amounts", "No proactive declaration"],
+            "benefits": ["Unpermit_or_registration amounts", "No proactive declaration"],
             "requirements": ["Truthful disclosure when questioned"]
           },
           {

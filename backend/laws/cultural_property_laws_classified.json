@@ -23,7 +23,7 @@
           }
         ]
       },
-      "restricted": {
+      "permit_or_registration": {
         "description": "Cultural property requiring permits, declarations, or special conditions",
         "items": [
           {

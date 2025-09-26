@@ -36,7 +36,7 @@
           }
         ]
       },
-      "restricted": {
+      "permit_or_registration": {
         "description": "Narcotics activities requiring permits, certifications, or meeting specific conditions",
         "items": [
           {

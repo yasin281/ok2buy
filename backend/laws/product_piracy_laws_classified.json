@@ -56,7 +56,7 @@
           }
         ]
       },
-      "restricted": {
+      "permit_or_registration": {
         "description": "Product authenticity verification and border control measures",
         "items": [
           {

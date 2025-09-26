@@ -6,7 +6,9 @@ app = FastAPI(title="ok2buy Backend API")
 
 origins = [
     "http://127.0.0.1:8000",
-    "http://localhost:<your-frontend-port>",]
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
 
 app.add_middleware(
     CORSMiddleware,
@@ -24,11 +26,11 @@ def read_root():
 
 @app.get("/health")
 def health_check():
-    return {"status": "ok", "code": 200}
+    return {"status": "ok", "code": 200}  # si recibe es que todo furula (func inutil)
 
 
 @app.get("/checkproductsapi/product/{product_id}")
 def check_product(product_id: int):
     if (product_id < 0):
         raise HTTPException(status_code=400, detail="Invalid product ID")
-    return validate_product(product_id)
+    return validate_product(product_id) # should return legal status and reasoning

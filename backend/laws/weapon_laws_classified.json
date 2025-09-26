@@ -39,7 +39,7 @@
           }
         ]
       },
-      "restricted": {
+      "permit_or_registration": {
         "description": "Weapons requiring permits, notifications, or special conditions",
         "items": [
           {

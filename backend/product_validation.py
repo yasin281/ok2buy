@@ -2,12 +2,12 @@ from enum import Enum
 
 from fastapi import HTTPException
 from gather_product_info import get_product_info
-
+from llm_handler import start_classification
 
 class ProductStatus(str, Enum):
     LEGAL = "legal"
     ILLEGAL = "illegal"
-    RESTRICTED = "restricted"
+    PERMIT_OR_REGISTRATION = "permit_or_registration"
     UNKNOWN = "unknown"
 
 
@@ -37,7 +37,9 @@ def create_response(product_info: dict, status: ProductStatus,
 def validate_product(product: int) -> dict:
     try:
         product_info = get_product_info(product)
-        return create_response(product_info, ProductStatus.LEGAL,
-                               ["Law1", "Law2", "Law3"])
+        status, reasons = start_classification(product_info)
+        response = create_response(
+            product_info, ProductStatus(status), reasons)
+        return response
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))

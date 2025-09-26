@@ -13,34 +13,58 @@ class SwissLegalClassifier:
             base_url=os.getenv("SWISSCOM_API_BASE_URL")
         )
 
-    def classify_product(self, product_description: str, legal_fragments: str, prompt_type: str) -> dict:
+    def llm_query(self, product_description: str, legal_fragments: str, prompt_type: str) -> dict:
         if (prompt_type == "classify"):
             prompt_system = (
-            "You are a border agent specializing in Swiss laws regarding product import and classification. "
-            "Answer ONLY in JSON format with exactly two fields: "
-            "\"classification\" which can be only 'legal', 'illegal', or 'permit_or_registration' and "
-            "\"reasoning\" with a brief explanation citing the relevant laws. Reasoning should be very concise and brief, no more than two short sentences, and shouldn't include non-related information."
+                "You are a Swiss border-control agent specializing in product import and classification under Swiss law."
+                "Respond **only** in valid JSON with exactly two fields:  "
+                "- `classification`: must be one of `legal`, `illegal`, or `permit_or_registration`.  "
+                "- `reasoning`: a concise (max 2 short sentences) explanation that briefly cites the relevant Swiss law or regulation.  "
+                "Do not include any extra text, formatting, or commentary outside the JSON object."
             )
 
             prompt_user = f"""
-            You are a border agent specializing in Swiss laws regarding product import and classification.
-            Classify the following product description according to the provided legal fragments.
+           You are a Swiss border-control agent specializing in product import and classification under Swiss law.  
+            Classify the product below strictly based on the provided legal fragments.
 
-            Product description: {product_description}
-            Legal fragments: {legal_fragments}
+            Product description: {product_description}  
+            Legal fragments: {legal_fragments}  
+
+            Respond **only** in valid JSON with exactly two fields:  
+            - "classification": must be one of "legal", "illegal", or "permit_or_registration".  
+            - "reasoning": a concise explanation (maximum 2 short sentences) briefly citing the relevant Swiss law or regulation.  
+
+            Do not include any other text, explanations, or formatting outside the JSON object.
             """
         elif (prompt_type == "describe"):
             prompt_system = (
-            "You are a border agent specializing in Swiss laws regarding product import and classification and you know good English and German. "
-            "Answer with a brief description of the product in English, and only include relevant details for classification of the product to help with the classification." \
-            "Description should be short and concise, no more than three long sentences."
+                "You are a Swiss border-control agent fluent in English and German. "
+                "Provide a concise English description of the product, focusing only on details relevant for its legal import classification under Swiss law. "
+                "The description must be brief, accurate, and limited to a maximum of three well-structured sentences."
             )
+
             prompt_user = f"""
-            You are a border agent in charge of describing products for classification according to Swiss laws.
-            Give a brief but complete description of the following product, focusing on details relevant for legal classification.
+            You are a Swiss border-control agent describing products for legal import classification.  
+            Provide a short but precise description of the following product, focusing only on characteristics that affect its classification under Swiss law.  
+
             Product description: {product_description}
             """
-        
+
+        elif prompt_type == "laws":
+            prompt_system = (
+                "You are a Swiss border-control agent specializing in product import and classification laws. "
+                "Respond with a plain list of the relevant Swiss laws or regulations that apply to the product. "
+                "List only the law titles from the following legal fragments only, with no explanations, commentary, or extra text. "
+            )
+
+            prompt_user = f"""
+            You are a Swiss border-control agent tasked with identifying applicable Swiss laws for product import and classification.  
+            List only the relevant Swiss laws that apply to the product below, based solely on the provided legal fragments.
+
+            Product description: {product_description}  
+            Legal fragments: {legal_fragments}
+            """
+
         response = self.client.chat.completions.create(
             model="swiss-ai/Apertus-70B",
             messages=[

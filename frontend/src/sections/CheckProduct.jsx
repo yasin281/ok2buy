@@ -112,24 +112,14 @@ const CheckProduct = () => {
             console.log(fieldValue);
             return renderProductDescription(fieldValue);
           }
+          
 
-          // Laws array
-          if (field === 'laws' && Array.isArray(fieldValue)) {
-            return (
-              <div key={field} className="mb-4">
-                <strong className="capitalize text-gray-700">
-                  Laws involved:
-                </strong>{' '}
-                <span className="text-gray-600">{fieldValue.join(', ')}</span>
-              </div>
-            );
-          }
 
           if (field === 'status') {
             let statusColor = 'text-gray-700';
             if (fieldValue.toLowerCase() === 'legal')
               statusColor = 'text-green-600';
-            if (fieldValue.toLowerCase() === 'restricted')
+            if (fieldValue.toLowerCase() === 'permit_or_registration')
               statusColor = 'text-yellow-600';
             if (fieldValue.toLowerCase() === 'illegal')
               statusColor = 'text-red-600';
@@ -142,6 +132,20 @@ const CheckProduct = () => {
                 <span className={`${statusColor} font-semibold`}>
                   {fieldValue}
                 </span>
+              </div>
+            );
+          }
+          
+ 
+
+          // Laws array
+          if (field === 'laws' && Array.isArray(fieldValue)) {
+            return (
+              <div key={field} className="mb-4">
+                <strong className="capitalize text-gray-700">
+                  Reasoning:
+                </strong>{' '}
+                <span className="text-gray-600">{fieldValue.join(', ')}</span>
               </div>
             );
           }

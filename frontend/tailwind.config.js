@@ -12,7 +12,7 @@ export default {
         primary: 'hsl(var(--primary))',
         'primary-foreground': 'hsl(var(--primary-foreground))',
         legal: 'hsl(var(--legal))',
-        restricted: 'hsl(var(--restricted))',
+        'permit-or-registration': 'hsl(var(--permit-or-registration))',
         illegal: 'hsl(var(--illegal))',
       },
       fontFamily: {

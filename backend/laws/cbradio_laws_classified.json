@@ -22,7 +22,7 @@
           }
         ]
       },
-      "restricted": {
+      "permit_or_registration": {
         "description": "CB radio activities requiring permits, registration, or specific conditions",
         "items": [
           {

@@ -48,7 +48,7 @@
           }
         ]
       },
-      "restricted": {
+      "permit_or_registration": {
         "description": "Pyrotechnic items requiring authorization or meeting specific conditions",
         "items": [
           {
