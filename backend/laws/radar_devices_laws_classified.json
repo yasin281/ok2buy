@@ -1,0 +1,99 @@
+{
+  "radar_devices_regulations": {
+    "general_description": "Regulations governing radar warning devices that alert drivers to police speed traps, with complete prohibition on use and market placement in Switzerland.",
+    "device_definition": {
+      "radar_warning_devices": "Devices that alert vehicle drivers via acoustic or optical signals to police speed traps",
+      "types": ["Radar wave detection devices", "Radar detectors", "Driver-alert systems"],
+      "function": "Allow drivers to reduce speed before reaching speed traps"
+    },
+    "classifications": {
+      "illegal": {
+        "description": "Radar detection devices that are completely prohibited in Switzerland",
+        "items": [
+          {
+            "category": "Use of radar warning devices",
+            "description": "Operating or using radar warning devices while driving or in vehicles",
+            "reason": "Undermines traffic law enforcement and speed trap effectiveness",
+            "consequences": ["Device confiscation", "Handover to cantonal authorities", "Fine imposition", "Device destruction"]
+          },
+          {
+            "category": "Market placement of radar devices",
+            "description": "Selling, distributing, or placing radar warning devices on the Swiss market",
+            "reason": "Prohibited to facilitate compliance with usage ban",
+            "consequences": ["Commercial penalties", "Device confiscation", "Business enforcement action"]
+          },
+          {
+            "category": "Importing radar warning devices",
+            "description": "Bringing radar detection devices into Swiss customs territory",
+            "reason": "Import facilitates prohibited use and market placement",
+            "consequences": ["Immediate confiscation", "Cantonal authority handover", "Destruction", "Import fines"]
+          },
+          {
+            "category": "Possession with intent to use",
+            "description": "Having radar warning devices with intention to use for speed trap detection",
+            "reason": "Possession for prohibited purpose violates traffic enforcement laws",
+            "consequences": ["Confiscation", "Legal penalties", "Device destruction"]
+          },
+          {
+            "category": "Non-declaration at customs",
+            "description": "Failing to declare radar warning devices during customs clearance",
+            "reason": "Customs declaration violation in addition to device prohibition",
+            "consequences": ["Additional fine for non-declaration", "Standard device penalties", "Enhanced enforcement"]
+          },
+          {
+            "category": "Incorrect customs declaration",
+            "description": "Incorrectly declaring radar warning devices during customs clearance",
+            "reason": "False declaration compounds the device prohibition violation",
+            "consequences": ["Additional fine for incorrect declaration", "Device confiscation", "Potential fraud charges"]
+          }
+        ]
+      },
+      "restricted": {
+        "description": "No restricted categories - radar warning devices are completely prohibited",
+        "items": []
+      },
+      "legal": {
+        "description": "Legal alternatives and compliant activities related to vehicle safety",
+        "items": [
+          {
+            "category": "Speed limit compliance systems",
+            "description": "Vehicle systems that help maintain legal speed limits without detecting enforcement",
+            "conditions": "Must not detect or alert to police enforcement activities",
+            "benefits": ["Legal speed management", "Safety enhancement", "No enforcement interference"],
+            "requirements": ["No radar detection capability", "No speed trap alerts", "Compliance-focused only"]
+          },
+          {
+            "category": "GPS navigation with speed limits",
+            "description": "Navigation systems showing posted speed limits for compliance",
+            "conditions": "Display legal speed limits only, no enforcement detection",
+            "benefits": ["Legal navigation assistance", "Speed limit awareness", "Road safety"],
+            "requirements": ["Posted speed limit display only", "No enforcement alerts", "Legal compliance focus"]
+          },
+          {
+            "category": "Vehicle safety systems",
+            "description": "Legitimate vehicle safety and monitoring systems",
+            "conditions": "Must not include radar warning or speed trap detection functionality",
+            "benefits": ["Enhanced vehicle safety", "Legal compliance", "No enforcement interference"],
+            "requirements": ["No radar detection", "Safety-focused only", "Compliance with traffic laws"]
+          },
+          {
+            "category": "Educational speed awareness",
+            "description": "Systems that promote speed limit awareness through education rather than enforcement evasion",
+            "conditions": "Educational purpose only, no enforcement detection",
+            "benefits": ["Driver education", "Safety promotion", "Legal compliance support"],
+            "requirements": ["Educational focus only", "No enforcement alerts", "Traffic law compliance"]
+          }
+        ]
+      }
+    },
+    "important_notes": {
+      "complete_prohibition": "Use and market placement of radar warning devices is prohibited in Switzerland",
+      "confiscation_rule": "Devices will be confiscated and handed over to cantonal authorities",
+      "destruction_policy": "Confiscated devices are typically destroyed",
+      "fine_structure": "Fines imposed for use/possession plus additional fines for declaration violations",
+      "customs_declaration": "Non-declaration or incorrect declaration leads to additional fines",
+      "enforcement_rationale": "Prohibition maintains effectiveness of speed enforcement and traffic safety measures",
+      "cantonal_authority": "Responsible cantonal authorities handle enforcement and penalties"
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "pyrotechnic_regulations": {
+    "general_description": "Regulations governing the import, export, and transit of pyrotechnic items (fireworks) to protect the population, with specific provisions for different categories and purposes.",
+    "authority": {
+      "customs_role": "Monitor bans on imports, exports and transit of pyrotechnic goods",
+      "authorization_office": "Federal Office of Police - Central Office for Explosives",
+      "contact": {
+        "address": "Guisanplatz 1A, 3003 Bern",
+        "phone": "+41 58 462 40 00",
+        "email": "zse@fedpol.admin.ch"
+      }
+    },
+    "definitions": {
+      "pyrotechnic_items": "Ready-to-use products containing explosive or ignition charge",
+      "categories": {
+        "commercial": ["P1, P2 (signalling devices, weather rockets, bird-scaring petards)", "P3 (industrial ammunition)", "T1, T2 (theatrical fireworks)"],
+        "leisure": ["F1, F2, F3 (safe-to-handle fireworks)", "F4 (commercial fireworks)"]
+      }
+    },
+    "classifications": {
+      "illegal": {
+        "description": "Pyrotechnic items that are completely prohibited from import",
+        "items": [
+          {
+            "category": "Unsafe-to-handle fireworks",
+            "description": "Fireworks that explode on the ground such as firecrackers, bangers, jumping crackers, 'tiger' fireworks, 'thunder' fireworks",
+            "reason": "Not considered safe to handle - pose public safety risk",
+            "consequences": ["Import prohibition", "Confiscation", "Destruction by cantonal authorities"]
+          },
+          {
+            "category": "Unauthorized commercial imports",
+            "description": "Commercial pyrotechnic items (P, T, F4) imported without proper authorization",
+            "reason": "Commercial imports require mandatory authorization",
+            "consequences": ["Prosecution under SprstG art. 37, SR 941.41", "Confiscation", "Destruction"]
+          },
+          {
+            "category": "Unauthorized large quantities",
+            "description": "F1, F2, F3 fireworks exceeding 2.5kg imported without authorization",
+            "reason": "Quantities over tourist traffic limit require authorization",
+            "consequences": ["Prosecution", "Confiscation", "Legal penalties"]
+          },
+          {
+            "category": "Aggregated quantities violation",
+            "description": "Attempting to aggregate maximum quantities for multiple people with single items",
+            "reason": "Maximum quantities cannot be aggregated for several people with indivisible items",
+            "example": "One 5kg firework battery for 2 people cannot claim exemption",
+            "consequences": ["No exemption allowed", "Authorization required", "Potential confiscation"]
+          }
+        ]
+      },
+      "restricted": {
+        "description": "Pyrotechnic items requiring authorization or meeting specific conditions",
+        "items": [
+          {
+            "category": "Commercial pyrotechnic items",
+            "description": "Industrial, technical, agricultural pyrotechnic items (P1, P2, P3)",
+            "requirements": ["Import authorization from Federal Office of Police", "Commercial purpose documentation"],
+            "conditions": "Always requires authorization regardless of quantity"
+          },
+          {
+            "category": "Theatrical fireworks",
+            "description": "Professional theatrical fireworks (T1, T2)",
+            "requirements": ["Import authorization", "Professional use documentation"],
+            "conditions": "Commercial/professional use authorization required"
+          },
+          {
+            "category": "Commercial fireworks F4",
+            "description": "Category F4 fireworks for commercial use",
+            "requirements": ["Import authorization", "Commercial use permit"],
+            "conditions": "Always requires authorization for commercial category"
+          },
+          {
+            "category": "Large quantity personal fireworks",
+            "description": "F1, F2, F3 fireworks exceeding 2.5kg gross weight for personal use",
+            "requirements": ["Import authorization from Federal Office of Police", "Personal use declaration"],
+            "conditions": "Authorization required when exceeding tourist traffic limits"
+          },
+          {
+            "category": "Divisible large fireworks",
+            "description": "Large firework items that cannot be divided among multiple people",
+            "requirements": ["Individual authorization", "No quantity aggregation allowed"],
+            "conditions": "Each person's limit applies individually, no combining allowed"
+          }
+        ]
+      },
+      "legal": {
+        "description": "Pyrotechnic items allowed under specific conditions without special authorization",
+        "items": [
+          {
+            "category": "Tourist traffic fireworks",
+            "description": "Safe-to-handle fireworks categories F1, F2, F3 for personal use",
+            "conditions": "Maximum 2.5kg gross weight per person per day",
+            "benefits": ["No import authorization required", "Tourist traffic exemption", "Personal use allowed"],
+            "requirements": ["Personal use only", "Safe-to-handle categories only", "Weight limit compliance", "No aggregation for multiple people"]
+          },
+          {
+            "category": "Small personal fireworks",
+            "description": "Individual F1, F2, F3 fireworks under personal limits",
+            "conditions": "Each person limited to 2.5kg gross weight per day",
+            "benefits": ["Simple import process", "No commercial authorization needed"],
+            "requirements": ["Individual possession", "Personal use", "Daily limit compliance"]
+          },
+          {
+            "category": "Authorized commercial imports",
+            "description": "Commercial pyrotechnic items with proper Federal Office of Police authorization",
+            "conditions": "Valid import authorization obtained",
+            "benefits": ["Legal commercial use", "Professional operations allowed"],
+            "requirements": ["Valid authorization", "Compliance with authorization terms", "Professional use documentation"]
+          }
+        ]
+      }
+    },
+    "important_notes": {
+      "tourist_traffic_limit": "2.5kg gross weight per person per day for F1, F2, F3 categories",
+      "no_aggregation_rule": "Maximum quantities cannot be aggregated for several people",
+      "unsafe_prohibition": "Ground-exploding fireworks (firecrackers, bangers, etc.) completely prohibited",
+      "commercial_authorization": "All commercial pyrotechnic items require authorization",
+      "prosecution_warning": "Violations liable to prosecution under SprstG art. 37, SR 941.41",
+      "enforcement": "Prohibited items confiscated and destroyed by cantonal authorities",
+      "authority_contact": "Federal Office of Police - Central Office for Explosives handles authorizations"
+    }
+  }
+}

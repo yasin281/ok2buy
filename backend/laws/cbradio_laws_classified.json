@@ -1,0 +1,83 @@
+{
+  "cb_radio_regulations": {
+    "general_description": "Citizens' band radio (CB radio) is used for all types of private, non-commercial radio communication within the 27 MHz band. It is intended for the exchange of personal information and views.",
+    "classifications": {
+      "illegal": {
+        "description": "CB radio activities that are completely prohibited",
+        "items": [
+          {
+            "category": "Commercial use",
+            "description": "Using CB radio for commercial or business purposes",
+            "reason": "CB radio is designated for private, non-commercial use only"
+          },
+          {
+            "category": "Non-compliant equipment",
+            "description": "CB radios that do not meet Swiss interface requirements",
+            "reason": "Must comply with Swiss technical standards"
+          },
+          {
+            "category": "Unlicensed data transmission",
+            "description": "Using Packet Radio devices on CB frequencies without proper call sign registration",
+            "reason": "Data transmission requires OFCOM call sign registration"
+          }
+        ]
+      },
+      "restricted": {
+        "description": "CB radio activities requiring permits, registration, or specific conditions",
+        "items": [
+          {
+            "category": "Permanent import CB radios",
+            "description": "Used or new CB radios destined to remain in Switzerland",
+            "requirements": ["Customs declaration", "Assessment for clearance"],
+            "conditions": "Must be declared and assessed for clearance at customs"
+          },
+          {
+            "category": "Data transmission devices",
+            "description": "Packet Radio devices on CB frequencies",
+            "requirements": ["OFCOM call sign registration", "Valid call sign"],
+            "conditions": "Registration required with Federal Office of Communications (OFCOM) since January 1, 2013"
+          },
+          {
+            "category": "Interface compliance",
+            "description": "CB radios must meet Swiss interface requirements",
+            "requirements": ["Swiss interface compliance certification"],
+            "conditions": "Only compliant devices may be used in Switzerland"
+          }
+        ]
+      },
+      "legal": {
+        "description": "CB radio activities allowed with standard conditions",
+        "items": [
+          {
+            "category": "Standard radiotelephony",
+            "description": "CB radiotelephones operating in 27 MHz band meeting Swiss requirements",
+            "conditions": "No radiocommunications licence required since January 1, 2013",
+            "benefits": ["License-free operation", "Private communication allowed"],
+            "requirements": ["Swiss interface compliance only"]
+          },
+          {
+            "category": "Temporary import by non-residents",
+            "description": "Used CB radios imported by persons resident abroad for re-exportation",
+            "conditions": "Intended for re-exportation only",
+            "benefits": ["Tax-free import", "No additional permits required"],
+            "requirements": ["Proof of non-resident status", "Intent to re-export"]
+          },
+          {
+            "category": "Personal information exchange",
+            "description": "Private, non-commercial radio communication for personal information and views",
+            "conditions": "Must remain private and non-commercial",
+            "benefits": ["Free communication within 27 MHz band"],
+            "requirements": ["Non-commercial use only", "Personal communication only"]
+          }
+        ]
+      }
+    },
+    "important_notes": {
+      "frequency_band": "27 MHz band designated for CB radio use",
+      "license_change": "No radiocommunications licence required since January 1, 2013 for radiotelephony",
+      "data_transmission_requirement": "Call sign registration with OFCOM required for Packet Radio devices since January 1, 2013",
+      "customs_rule": "Declaration and assessment required for CB radios remaining in Switzerland",
+      "tax_exemption": "Tax-free import available for temporary import by non-residents for re-export"
+    }
+  }
+}

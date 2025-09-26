@@ -1,0 +1,93 @@
+{
+  "cultural_property_regulations": {
+    "general_description": "Regulations governing the import and export of cultural property in tourist traffic, with special protections for archaeological items and provisions for musical instruments.",
+    "classifications": {
+      "illegal": {
+        "description": "Cultural property imports/exports that are completely prohibited",
+        "items": [
+          {
+            "category": "Stolen cultural property",
+            "description": "Importing stolen cultural property from any source",
+            "reason": "International prohibition on trafficking stolen cultural artifacts"
+          },
+          {
+            "category": "Pillaged cultural property", 
+            "description": "Importing pillaged cultural property from any source",
+            "reason": "International prohibition on trafficking pillaged cultural artifacts"
+          },
+          {
+            "category": "Archaeological items without permits",
+            "description": "Importing archaeological cultural property from bilateral agreement countries without official export permits",
+            "reason": "Bilateral agreements require official export authorization",
+            "affected_countries": ["Egypt", "China", "Greece", "Italy", "Colombia", "Cyprus"]
+          }
+        ]
+      },
+      "restricted": {
+        "description": "Cultural property requiring permits, declarations, or special conditions",
+        "items": [
+          {
+            "category": "General cultural property in tourist traffic",
+            "description": "Cultural property imported or exported by travelers",
+            "requirements": ["Electronic declaration at customs", "Merchandise-responsible customs office"],
+            "conditions": "Must be declared electronically at designated customs offices"
+          },
+          {
+            "category": "Archaeological items from agreement countries",
+            "description": "Archaeological cultural property from countries with bilateral agreements",
+            "requirements": ["Official export permit from origin country", "Present permit to Swiss Customs"],
+            "conditions": "Mandatory official export permit required",
+            "affected_countries": ["Egypt", "China", "Greece", "Italy", "Colombia", "Cyprus"],
+            "note": "Many states have export bans or authorization requirements"
+          },
+          {
+            "category": "Commercial cultural property",
+            "description": "Cultural property intended for commercial purposes rather than personal use",
+            "requirements": ["Full customs declaration", "Commercial import procedures"],
+            "conditions": "Standard commercial import regulations apply"
+          }
+        ]
+      },
+      "legal": {
+        "description": "Cultural property allowed with minimal or no restrictions",
+        "items": [
+          {
+            "category": "Personal musical instruments",
+            "description": "Portable musical instruments temporarily imported/exported for personal use",
+            "conditions": "Personal use as personal effects",
+            "benefits": ["No declaration required", "Free movement in tourist traffic"],
+            "requirements": ["Temporary import/export only", "Personal use only"]
+          },
+          {
+            "category": "Concert musical instruments",
+            "description": "Musical instruments used for concerts or teaching purposes",
+            "conditions": "Professional use for concerts or education",
+            "benefits": ["No declaration required", "Professional use allowed"],
+            "requirements": ["Concert or teaching purpose", "Temporary import/export"]
+          },
+          {
+            "category": "Loaned musical instruments",
+            "description": "Musical instruments on loan for temporary use",
+            "conditions": "Loan arrangement for temporary use",
+            "benefits": ["No declaration required", "Loan arrangements permitted"],
+            "requirements": ["Documented loan arrangement", "Temporary basis"]
+          },
+          {
+            "category": "Legitimately acquired cultural property",
+            "description": "Cultural property with clear legal provenance and proper documentation",
+            "conditions": "Must have legal acquisition documentation",
+            "benefits": ["Legal import/export with proper declaration"],
+            "requirements": ["Proof of legal acquisition", "Not stolen or pillaged", "Proper documentation"]
+          }
+        ]
+      }
+    },
+    "important_notes": {
+      "declaration_requirement": "Electronic declaration required at customs offices responsible for merchandise",
+      "due_diligence": "Buyers must check carefully that cultural property is not stolen or pillaged",
+      "archaeological_caution": "Special care required for archaeological items due to frequent export restrictions",
+      "bilateral_agreements": "Switzerland has bilateral agreements with Egypt, China, Greece, Italy, Colombia, and Cyprus (as of January 2015)",
+      "musical_instruments_exemption": "Portable musical instruments for personal, concert, or teaching use are exempt from declaration in tourist traffic"
+    }
+  }
+}

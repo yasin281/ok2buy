@@ -1,0 +1,126 @@
+{
+  "product_piracy_regulations": {
+    "general_description": "Strict prohibition on importing or exporting counterfeit trademarks and counterfeit designs through Swiss customs territory, including tourist traffic goods for personal use.",
+    "classifications": {
+      "illegal": {
+        "description": "Product piracy activities that are strictly prohibited with immediate enforcement",
+        "items": [
+          {
+            "category": "Counterfeit trademarks import",
+            "description": "Importing goods with counterfeited trademarks into Swiss customs territory",
+            "reason": "Violation of intellectual property rights and trademark laws",
+            "consequences": ["Immediate confiscation", "Destruction of goods", "Border seizure"],
+            "scope": "All imports regardless of purpose or quantity"
+          },
+          {
+            "category": "Counterfeit designs import",
+            "description": "Importing goods with counterfeited designs into Swiss customs territory", 
+            "reason": "Violation of design rights and intellectual property protection",
+            "consequences": ["Immediate confiscation", "Destruction of goods", "Border seizure"],
+            "scope": "All imports regardless of purpose or quantity"
+          },
+          {
+            "category": "Counterfeit trademarks export",
+            "description": "Exporting goods with counterfeited trademarks from Swiss customs territory",
+            "reason": "Violation of intellectual property rights and international trade laws",
+            "consequences": ["Immediate confiscation", "Destruction of goods", "Border seizure"],
+            "scope": "All exports regardless of destination"
+          },
+          {
+            "category": "Counterfeit designs export",
+            "description": "Exporting goods with counterfeited designs from Swiss customs territory",
+            "reason": "Violation of design rights and international trade laws", 
+            "consequences": ["Immediate confiscation", "Destruction of goods", "Border seizure"],
+            "scope": "All exports regardless of destination"
+          },
+          {
+            "category": "Transit counterfeits",
+            "description": "Transporting counterfeit goods through Swiss customs territory in transit",
+            "reason": "Switzerland enforces anti-counterfeiting laws even for goods in transit",
+            "consequences": ["Immediate confiscation", "Destruction of goods", "Transit blocking"],
+            "scope": "All transit shipments"
+          },
+          {
+            "category": "Personal use counterfeits",
+            "description": "Tourist traffic goods with counterfeit trademarks or designs for personal use",
+            "reason": "No exemption for personal use - strict prohibition applies universally",
+            "consequences": ["Confiscation regardless of personal use", "Destruction", "No personal use exception"],
+            "scope": "Tourist traffic and personal use items"
+          },
+          {
+            "category": "Used counterfeits",
+            "description": "Previously used goods with counterfeit trademarks or designs",
+            "reason": "Condition of goods (new or used) is irrelevant to counterfeiting laws",
+            "consequences": ["Confiscation regardless of condition", "Destruction", "No used goods exception"],
+            "scope": "Both new and used counterfeit goods"
+          }
+        ]
+      },
+      "restricted": {
+        "description": "Product authenticity verification and border control measures",
+        "items": [
+          {
+            "category": "Suspect goods inspection",
+            "description": "Goods suspected of being counterfeit subject to detailed inspection",
+            "requirements": ["Customs verification", "Authenticity documentation", "Rights holder consultation"],
+            "conditions": "Goods held pending authenticity verification"
+          },
+          {
+            "category": "Intellectual property enforcement",
+            "description": "Enforcement of registered trademarks and designs at borders",
+            "requirements": ["Rights holder registration", "Customs enforcement request", "Clear identification criteria"],
+            "conditions": "Active enforcement for registered intellectual property"
+          },
+          {
+            "category": "Disputed authenticity goods",
+            "description": "Goods with unclear or disputed authenticity status",
+            "requirements": ["Expert evaluation", "Rights holder verification", "Legal documentation"],
+            "conditions": "Held pending resolution of authenticity disputes"
+          }
+        ]
+      },
+      "legal": {
+        "description": "Authentic goods and legitimate trade activities",
+        "items": [
+          {
+            "category": "Authentic trademark products",
+            "description": "Genuine products bearing legitimate trademarks authorized by rights holders",
+            "conditions": "Verified authentic products with proper authorization",
+            "benefits": ["Free movement across borders", "No inspection delays", "Legal protection"],
+            "requirements": ["Genuine products only", "Proper authorization", "Legal acquisition"]
+          },
+          {
+            "category": "Authentic design products", 
+            "description": "Genuine products with original designs authorized by rights holders",
+            "conditions": "Verified authentic products with original designs",
+            "benefits": ["Free movement across borders", "No restrictions", "Design protection"],
+            "requirements": ["Original designs only", "Proper authorization", "Legal manufacture"]
+          },
+          {
+            "category": "Generic and unbranded products",
+            "description": "Products without trademark claims that do not infringe on protected designs",
+            "conditions": "No trademark or design infringement",
+            "benefits": ["Free movement", "No counterfeiting concerns", "Legal trade"],
+            "requirements": ["No trademark infringement", "No design copying", "Original products"]
+          },
+          {
+            "category": "Licensed products",
+            "description": "Products manufactured under proper licensing agreements with rights holders",
+            "conditions": "Valid licensing agreements and proper authorization",
+            "benefits": ["Legal use of trademarks/designs", "Free movement", "Commercial protection"],
+            "requirements": ["Valid licenses", "Rights holder approval", "Compliance with licensing terms"]
+          }
+        ]
+      }
+    },
+    "important_notes": {
+      "strict_prohibition": "Counterfeits are strictly prohibited with no exceptions",
+      "universal_application": "Rules apply to import, export, and transit through Swiss customs territory",
+      "no_personal_use_exception": "Tourist traffic goods for personal use are also subject to prohibition",
+      "condition_irrelevant": "New or used status does not affect counterfeiting laws",
+      "immediate_enforcement": "Counterfeits may be confiscated and destroyed when crossing the border",
+      "comprehensive_scope": "Applies to both trademark and design counterfeits",
+      "zero_tolerance": "No quantity threshold - any amount of counterfeits is prohibited"
+    }
+  }
+}

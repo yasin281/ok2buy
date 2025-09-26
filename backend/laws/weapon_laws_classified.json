@@ -1,0 +1,130 @@
+{
+  "weapon_regulations": {
+    "general_requirements": {
+      "border_notification": "All weapons, parts of weapons, ammunition and parts of ammunition must be declared to the customs office on importation, exportation and transit."
+    },
+    "classifications": {
+      "illegal": {
+        "description": "Completely prohibited weapons that cannot be imported, exported, or possessed",
+        "items": [
+          {
+            "category": "Automatic firearms",
+            "description": "Automatic firearms and automatic firearms converted to semiautomatic small arms",
+            "reason": "High risk to public safety"
+          },
+          {
+            "category": "Prohibited knives",
+            "description": "Daggers, throwing knives, butterfly knives, switchblade knives and other knives with automatic release mechanism or a spring assisted opening mechanism",
+            "reason": "Designed primarily as weapons"
+          },
+          {
+            "category": "Combat weapons",
+            "description": "Beating weapons, throwing weapons and slings",
+            "reason": "Designed to cause harm"
+          },
+          {
+            "category": "Electric shock devices",
+            "description": "Electric shock devices",
+            "reason": "Dangerous electrical weapons"
+          },
+          {
+            "category": "Concealed weapons",
+            "description": "Weapons disguised as everyday objects (e.g. walking stick or camera)",
+            "reason": "Deceptive nature poses security risk"
+          },
+          {
+            "category": "Military accessories",
+            "description": "Silencers and laser and night-vision devices",
+            "reason": "Military/tactical equipment"
+          }
+        ]
+      },
+      "restricted": {
+        "description": "Weapons requiring permits, notifications, or special conditions",
+        "items": [
+          {
+            "category": "Standard firearms",
+            "description": "Pistols, revolvers, rifles, pump action guns, lever action guns, self-loading guns (shotguns and rifles)",
+            "requirements": ["Import/export permit", "Border declaration", "Carrying permit for public use"],
+            "conditions": "Permit required for carrying in public and border crossing"
+          },
+          {
+            "category": "High-power air weapons",
+            "description": "Compressed air and CO2 weapons that develop a muzzle energy of at least 7.5 joules or that can be mistaken for real firearms",
+            "requirements": ["Border declaration", "Import/export permit"],
+            "conditions": "Must be declared at customs"
+          },
+          {
+            "category": "Realistic imitations",
+            "description": "Imitation, blank cartridge and airsoft weapons that can be mistaken for real firearms due to their appearance",
+            "requirements": ["Border declaration", "Import/export permit"],
+            "conditions": "Appearance-based restriction"
+          },
+          {
+            "category": "Large knives",
+            "description": "Knives whose blade can be opened by automatic mechanism (one hand), overall length > 12 cm and blade > 5 cm",
+            "requirements": ["Border declaration", "Import/export permit"],
+            "conditions": "Size and mechanism restrictions"
+          },
+          {
+            "category": "Daggers",
+            "description": "Daggers with a symmetrical blade no longer than 30 cm",
+            "requirements": ["Border declaration", "Import/export permit"],
+            "conditions": "Length restriction"
+          },
+          {
+            "category": "Impact weapons",
+            "description": "Knuckledusters, simple or spring batons, throwing stars and slingshots with arm support",
+            "requirements": ["Border declaration", "Import/export permit"],
+            "conditions": "Designed to injure"
+          },
+          {
+            "category": "Irritant sprays",
+            "description": "Spray devices with irritants (CA, CS, CN or CR) according to Appendix 2 Weapons Ordinance",
+            "requirements": ["Border declaration", "Import/export permit"],
+            "conditions": "Excluding pepper sprays"
+          },
+          {
+            "category": "War weapons for competition",
+            "description": "Personal war weapons with corresponding ammunition for shooting competitions or training",
+            "requirements": ["Supporting evidence", "Temporary import/export only"],
+            "conditions": "Competition or training purposes only, no permit required but evidence needed"
+          }
+        ]
+      },
+      "legal": {
+        "description": "Weapons allowed under specific conditions with tax exemptions",
+        "items": [
+          {
+            "category": "Hunting weapons",
+            "description": "Single- or multi-barrel firearms with smooth-bore barrels (shotguns) or rifled barrels (hunting carbines and harquebuses), combination guns",
+            "conditions": "Up to 2 personal hunting weapons with ammunition for temporary import/export",
+            "benefits": ["Tax exemption", "No permit required for temporary import/export"],
+            "requirements": ["Supporting evidence (hunting permits, ground leases)", "Temporary import/export only"]
+          },
+          {
+            "category": "Target shooting weapons",
+            "description": "Small arms of all calibers (e.g. target shooting pistols) clearly recognizable as target weapons",
+            "conditions": "Up to 2 personal target weapons or 1 hunting + 1 target weapon with ammunition",
+            "benefits": ["Tax exemption", "No permit required for temporary import/export"],
+            "requirements": ["Supporting evidence (shooting programmes, event invitations)", "Temporary import/export only"]
+          },
+          {
+            "category": "Pepper sprays",
+            "description": "Standard pepper sprays (not containing CA, CS, CN or CR irritants)",
+            "conditions": "Excluded from electric shock device and irritant spray restrictions",
+            "benefits": ["Less restrictive regulations"],
+            "requirements": ["Basic border declaration"]
+          }
+        ]
+      }
+    },
+    "important_notes": {
+      "ammunition_restrictions": "Ammunition acquired abroad by residents of Switzerland requires a permit in all cases and is exempt from tax only up to the allowance of CHF 150",
+      "supporting_evidence": "Includes shooting programmes, invitations to events, hunting permits and hunting ground leases",
+      "general_permit_rule": "Weapons which are not classified as prohibited require a permit",
+      "carrying_permit": "A permit is required for carrying a weapon in public",
+      "border_crossing": "A permit is required for importing, exporting or transiting weapons, parts of weapons, ammunition and parts of ammunition"
+    }
+  }
+}

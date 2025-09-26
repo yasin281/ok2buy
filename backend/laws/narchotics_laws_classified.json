@@ -1,0 +1,105 @@
+{
+  "narcotics_regulations": {
+    "general_description": "Regulations governing the import, export, and transit of narcotics and psychotropic substances, with customs authorities monitoring compliance and combating smuggling.",
+    "authorities": {
+      "customs_role": "Monitor importation, exportation and transit of narcotics, combat smuggling",
+      "violation_response": "Contact competent authorities (Swissmedic, police, etc.) when violations occur",
+      "decision_authority": "Competent authorities decide on further steps for violations"
+    },
+    "classifications": {
+      "illegal": {
+        "description": "Narcotics activities that are completely prohibited and subject to criminal prosecution",
+        "items": [
+          {
+            "category": "Narcotics smuggling",
+            "description": "Illegal importation, exportation, or transit of controlled narcotics without proper authorization",
+            "reason": "Criminal activity under narcotics laws",
+            "consequences": ["Criminal prosecution", "Police investigation", "Customs seizure"]
+          },
+          {
+            "category": "Trafficking controlled substances",
+            "description": "Commercial trafficking or distribution of narcotics and psychotropic substances",
+            "reason": "Serious criminal offense under narcotics legislation",
+            "consequences": ["Criminal charges", "Asset seizure", "Imprisonment"]
+          },
+          {
+            "category": "Unlicensed commercial import/export",
+            "description": "Commercial importation or exportation of narcotics without proper permits and licenses",
+            "reason": "Requires specific commercial licensing and permits",
+            "consequences": ["Business closure", "Criminal charges", "Regulatory penalties"]
+          },
+          {
+            "category": "Carrying for others",
+            "description": "Carrying narcotic medicines for someone else, even in personal quantities",
+            "reason": "Personal use exemption only applies to one's own medication",
+            "consequences": ["Confiscation", "Legal charges", "Investigation"]
+          }
+        ]
+      },
+      "restricted": {
+        "description": "Narcotics activities requiring permits, certifications, or meeting specific conditions",
+        "items": [
+          {
+            "category": "Commercial narcotics import/export",
+            "description": "Business importation or exportation of narcotics for commercial purposes",
+            "requirements": ["Swissmedic permits", "Import/export licenses", "Commercial authorization"],
+            "conditions": "Must comply with all commercial narcotics regulations"
+          },
+          {
+            "category": "Large quantity personal medicines",
+            "description": "Personal medicines containing narcotics exceeding 30-day supply",
+            "requirements": ["Import/export permit", "Medical justification", "Destination country approval"],
+            "conditions": "Quantities beyond 30 days require official permits"
+          },
+          {
+            "category": "Professional medical transport",
+            "description": "Medical professionals transporting narcotics for legitimate medical purposes",
+            "requirements": ["Professional credentials", "Medical authorization", "Proper documentation"],
+            "conditions": "Must have legitimate medical purpose and authorization"
+          },
+          {
+            "category": "Research and scientific use",
+            "description": "Narcotics for legitimate research or scientific purposes",
+            "requirements": ["Research permits", "Scientific authorization", "Institutional approval"],
+            "conditions": "Must be for legitimate research with proper oversight"
+          }
+        ]
+      },
+      "legal": {
+        "description": "Narcotics activities allowed under specific conditions for personal medical use",
+        "items": [
+          {
+            "category": "Personal medical narcotics (≤30 days)",
+            "description": "Medicinal products containing narcotic or psychotropic substances for personal use",
+            "conditions": "Maximum 30-day supply for personal use only",
+            "benefits": ["No import/export permit required", "Legal personal medical use"],
+            "requirements": ["Personal use only", "Not for others", "30-day supply maximum", "Destination country allows (for export)"]
+          },
+          {
+            "category": "Prescribed psychotropic medicines",
+            "description": "Legally prescribed psychotropic substances for personal medical treatment",
+            "conditions": "Valid prescription and personal use within limits",
+            "benefits": ["Legal medical treatment", "No smuggling charges"],
+            "requirements": ["Valid prescription", "Personal use only", "Quantity limits respected"]
+          },
+          {
+            "category": "Medical emergency transport",
+            "description": "Emergency medical transport of personal narcotics within legal limits",
+            "conditions": "Medical emergency and within personal use quantities",
+            "benefits": ["Emergency medical access", "Compassionate allowance"],
+            "requirements": ["Medical emergency", "Personal use quantities", "Not for distribution"]
+          }
+        ]
+      }
+    },
+    "important_notes": {
+      "personal_use_limit": "30-day supply maximum for personal medicines without permits",
+      "personal_use_only": "Medicines must be for your own personal use, not for someone else",
+      "destination_restrictions": "For export, destination country must allow the substance",
+      "customs_monitoring": "All narcotics movements monitored by customs authorities",
+      "authority_cooperation": "Violations reported to Swissmedic, police, and other competent authorities",
+      "certification_info": "Further information and advice available from Swiss Agency for Therapeutic Products",
+      "smuggling_enforcement": "Customs actively combats narcotics smuggling"
+    }
+  }
+}

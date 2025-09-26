@@ -1,0 +1,101 @@
+{
+  "currency_regulations": {
+    "general_description": "Regulations governing the movement of cash, foreign currency, and securities across Swiss borders, with disclosure requirements for amounts exceeding CHF 10,000.",
+    "classifications": {
+      "illegal": {
+        "description": "Currency-related activities that are completely prohibited and subject to criminal penalties",
+        "items": [
+          {
+            "category": "Money laundering",
+            "description": "Using cash movements to conceal the origins of illegally obtained funds",
+            "reason": "Criminal activity under anti-money laundering laws",
+            "consequences": ["Temporary seizure of cash", "Police handover", "Criminal prosecution measures"]
+          },
+          {
+            "category": "Terrorist financing",
+            "description": "Moving cash for the purpose of financing terrorist activities",
+            "reason": "Criminal activity under anti-terrorism financing laws",
+            "consequences": ["Temporary seizure of cash", "Police handover", "Criminal prosecution measures"]
+          },
+          {
+            "category": "Providing false information",
+            "description": "Giving false information about cash amounts, origin, purpose, or beneficiary when questioned by FOCBS",
+            "reason": "Administrative offense with legal penalties",
+            "consequences": ["Administrative fine", "Further investigation"]
+          },
+          {
+            "category": "Refusing to provide information",
+            "description": "Refusing to answer questions about cash when questioned by FOCBS staff during checks",
+            "reason": "Administrative offense - cooperation required during official checks",
+            "consequences": ["Administrative fine", "Possible seizure"]
+          }
+        ]
+      },
+      "restricted": {
+        "description": "Currency movements subject to disclosure requirements or special conditions",
+        "items": [
+          {
+            "category": "High-value cash movements (≥CHF 10,000)",
+            "description": "Carrying CHF 10,000 or more in cash, foreign currency, or securities",
+            "requirements": ["Must disclose identity when questioned", "Must provide origin information", "Must state intended purpose", "Must identify beneficiary"],
+            "conditions": "Information registered in FOCBS system when amount equals or exceeds CHF 10,000"
+          },
+          {
+            "category": "Suspicious cash movements",
+            "description": "Cash movements that raise suspicion during FOCBS checks regardless of amount",
+            "requirements": ["Must provide truthful information when questioned", "Subject to enhanced scrutiny"],
+            "conditions": "Subject to investigation if suspicious activity detected"
+          },
+          {
+            "category": "Cross-border cash declarations",
+            "description": "Cash movements subject to questioning during FOCBS checks",
+            "requirements": ["Must provide truthful responses when questioned", "Must cooperate with border officials"],
+            "conditions": "Obligation to provide information when directly questioned by FOCBS staff"
+          }
+        ]
+      },
+      "legal": {
+        "description": "Currency movements allowed with minimal restrictions",
+        "items": [
+          {
+            "category": "Unrestricted cash movement",
+            "description": "Foreign currency and securities carried into, through, and out of Switzerland",
+            "conditions": "No amount limitations",
+            "benefits": ["No declaration obligation", "Unrestricted amounts allowed", "Free movement across borders"],
+            "requirements": ["Must answer truthfully if questioned", "No proactive declaration needed"]
+          },
+          {
+            "category": "Standard cash amounts (<CHF 10,000)",
+            "description": "Cash amounts below CHF 10,000 equivalent",
+            "conditions": "Below the registration threshold",
+            "benefits": ["No registration in FOCBS system", "Standard treatment"],
+            "requirements": ["Truth when questioned only"]
+          },
+          {
+            "category": "Securities and financial instruments",
+            "description": "Shares, bonds, and cheques carried across borders",
+            "conditions": "Same rules as cash apply",
+            "benefits": ["Unrestricted amounts", "No proactive declaration"],
+            "requirements": ["Truthful disclosure when questioned"]
+          },
+          {
+            "category": "Legitimate cash movements",
+            "description": "Cash movements for legal purposes with proper documentation",
+            "conditions": "Legal origin and legitimate purpose",
+            "benefits": ["Legal protection", "Standard processing"],
+            "requirements": ["Ability to demonstrate legal origin and purpose if questioned"]
+          }
+        ]
+      }
+    },
+    "important_notes": {
+      "no_declaration_requirement": "No obligation to proactively declare cash to FOCBS",
+      "truthful_disclosure_obligation": "Must provide truthful information when questioned by FOCBS staff",
+      "registration_threshold": "CHF 10,000 or equivalent triggers registration in FOCBS information system",
+      "administrative_offense": "Refusal to provide information or false information constitutes administrative offense with fines",
+      "criminal_consequences": "Suspected money laundering or terrorist financing leads to seizure and police handover",
+      "other_countries": "Different regulations apply in other countries - contact foreign authorities directly",
+      "focbs_authority": "Federal Office for Customs and Border Security (FOCBS) has authority to question and investigate"
+    }
+  }
+}
