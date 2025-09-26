@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-background text-foreground transition-colors duration-300;
+  font-feature-settings: 'rlig' 1, 'calt' 1;
+  font-family: 'Courier Prime', monospace;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    --background: 210, 16%, 98%;
+    --foreground: 210, 15%, 10%;
+    --card: 0, 0%, 100%;
+    --border: 210, 20%, 85%;
+
+    --legal: 160, 70%, 40%;
+    --restricted: 45, 100%, 50%;
+    --illegal: 0, 85%, 55%;
+
+    --primary: 355, 75%, 55%;
+    --primary-foreground: 0, 0%, 100%;
+
+    --muted-foreground: 210, 8%, 40%;
+    --annotation: 200, 85%, 55%;
+    --annotation-foreground: 0, 0%, 100%;
+  }
+}
+
+.button-primary {
+  @apply p-2 z-50 rounded-md border-2 border-primary bg-transparent text-primary;
+}
+
+.button-primary:hover {
+  @apply bg-primary text-white;
+}
