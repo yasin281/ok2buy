@@ -65,7 +65,7 @@ const CheckProduct = () => {
       }
 
       const res = await fetch(
-        `http://ok2buy.onrender.com/checkproductsapi/product/${productId}`
+        `https://ok2buy.onrender.com/checkproductsapi/product/${productId}`
       );
 
       const data = await res.json();
