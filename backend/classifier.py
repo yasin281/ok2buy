@@ -9,8 +9,8 @@ load_dotenv()
 class SwissLegalClassifier:
     def __init__(self):
         self.client = OpenAI(
-            api_key=os.getenv("SWISSCOM_API_KEY"),
-            base_url=os.getenv("SWISSCOM_API_BASE_URL")
+            api_key=os.getenv("HF_TOKEN"),
+            base_url=os.getenv("HF_API_URL")
         )
 
     def llm_query(self, product_description: str, legal_fragments: str, prompt_type: str) -> dict:
@@ -68,12 +68,12 @@ class SwissLegalClassifier:
             """
 
         response = self.client.chat.completions.create(
-            model="swiss-ai/Apertus-70B",
+            model="swiss-ai/Apertus-8B-Instruct-2509",
             messages=[
                 {"role": "system", "content": prompt_system},
                 {"role": "user", "content": prompt_user}
             ],
-            temperature=0.7,
+            temperature=0.9,
         )
 
         return response.choices[0].message.content
