@@ -86,6 +86,7 @@ const About = () => {
             <li>Backend: Python, FastAPI, Uvicorn</li>
             <li>AI Model: Apertus over Swisscom inference platform</li>
             <li>LLM Requests: OpenAI API</li>
+            <li>Hosting: Render</li>
           </ul>
         </p>
         <h3 className="text-2xl font-semibold mt-4">Future Work</h3>
@@ -95,6 +96,7 @@ const About = () => {
             <li>Enhance the AI model's accuracy, reliability and speed through continuous training and fine-tuning.</li>
             <li>Implement a robust caching mechanism to store previously classified products for faster response times.</li>
             <li>Expand the database of laws and regulations to cover a wider range of product categories and jurisdictions.</li>
+            <li>Containerize the application using Docker for easier deployment and scalability.</li>
           </ul>
         </p>
 
