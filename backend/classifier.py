@@ -21,7 +21,7 @@ class SwissLegalClassifier:
                 "- `classification`: must be one of `legal`, `illegal`, or `permit_or_registration`.  "
                 "- `reasoning`: a concise (max 2 short sentences) explanation that briefly cites the relevant Swiss law or regulation.  "
                 "Do not include any extra text, formatting, or commentary outside the JSON object."
-                "The laws are: {legal_fragments}"
+                
             )
 
             prompt_user = f"""
@@ -29,6 +29,7 @@ class SwissLegalClassifier:
             Classify the product below strictly based on the provided legal fragments.
 
             Product description: {product_description}  
+            "The laws are: {legal_fragments}"
           
 
             Respond **only** in valid JSON with exactly two fields:  
@@ -72,7 +73,7 @@ class SwissLegalClassifier:
                 {"role": "system", "content": prompt_system},
                 {"role": "user", "content": prompt_user}
             ],
-            temperature=1.0,
+            temperature=0.7,
         )
 
         return response.choices[0].message.content
