@@ -3,7 +3,7 @@ import CheckProduct from '../sections/CheckProduct';
 
 const Home = () => {
   return (
-    <main>
+    <main id="home">
       <CheckProduct />
     </main>
   );

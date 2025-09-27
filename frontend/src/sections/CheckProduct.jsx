@@ -5,13 +5,29 @@ const required_fields = [
   'product_name',
   'product_description',
   'shop',
-  'laws',
   'status',
+  'laws',
 ];
+
+const handleScrollToAbout = () => {
+  const aboutSection = document.getElementById('about');
+  if (aboutSection) {
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+const LoadingOverlay = () => {
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-gray-200 bg-opacity-60 backdrop-blur-sm z-50">
+      <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+    </div>
+  );
+};
 
 const CheckProduct = () => {
   const [productId, setProductId] = useState('');
   const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const renderProductDescription = (descriptionArray) => {
     if (!Array.isArray(descriptionArray) || descriptionArray.length === 0) {
@@ -73,11 +89,25 @@ const CheckProduct = () => {
       if (!res.ok) {
         throw new Error(data.detail || 'Failed to fetch product info');
       }
-
       setResult({ data });
     } catch (err) {
       console.error('Error fetching:', err);
       setResult({ error: err.message });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getStatusColor = (status) => {
+    switch (status.toLowerCase()) {
+      case 'legal':
+        return 'bg-green-600';
+      case 'permit_or_registration':
+        return 'bg-yellow-500';
+      case 'illegal':
+        return 'bg-red-600';
+      default:
+        return 'bg-gray-500';
     }
   };
 
@@ -109,11 +139,8 @@ const CheckProduct = () => {
           if (!fieldValue) return null;
 
           if (field === 'product_description' && Array.isArray(fieldValue)) {
-            console.log(fieldValue);
             return renderProductDescription(fieldValue);
           }
-          
-
 
           if (field === 'status') {
             let statusColor = 'text-gray-700';
@@ -125,26 +152,25 @@ const CheckProduct = () => {
               statusColor = 'text-red-600';
 
             return (
-              <div key={field} className="mb-4">
+              <div key={field} className="flex items-center gap-2 mb-4">
                 <strong className="capitalize text-gray-700">
                   {field.replace('_', ' ')}:
-                </strong>{' '}
-                <span className={`${statusColor} font-semibold`}>
+                </strong>
+                <span
+                  className={`px-3 py-1 rounded-full text-white font-semibold ${getStatusColor(
+                    fieldValue
+                  )}`}
+                >
                   {fieldValue}
                 </span>
               </div>
             );
           }
-          
- 
-
           // Laws array
           if (field === 'laws' && Array.isArray(fieldValue)) {
             return (
               <div key={field} className="mb-4">
-                <strong className="capitalize text-gray-700">
-                  Reasoning:
-                </strong>{' '}
+                <strong className="capitalize text-gray-700">Reasoning:</strong>{' '}
                 <span className="text-gray-600">{fieldValue.join(', ')}</span>
               </div>
             );
@@ -164,34 +190,51 @@ const CheckProduct = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
+    <div className="flex flex-col items-center min-h-screen bg-background px-4 py-12">
+      {loading && <LoadingOverlay />}
       <div className="w-full max-w-4xl flex flex-col items-center">
         {/* Title */}
-        <h1 className="text-5xl font-bold mb-4 text-center text-gray-800">
+        <h1 className="text-5xl font-bold mb-4 text-center text-foreground">
           ok2buy
         </h1>
 
-        <p className="text-lg text-gray-600 mb-10 text-center">
-          Check if a product is legal to buy or not.
+        <p className="text-lg text-gray-600 mb-10 text-center max-w-2xl">
+          Enter a product ID to check if the product is{' '}
+          <span className="font-semibold">legal</span>,{' '}
+          <span className="font-semibold">illegal</span>, or requires{' '}
+          <span className="font-semibold">permit/registration</span> in
+          Switzerland.
         </p>
 
-        <div className="flex w-1/2 mb-6">
+        <div className="flex w-full mb-6 ">
           <input
             type="text"
-            placeholder="Enter product ID"
+            placeholder="🔍 Enter product ID..."
             value={productId}
             onChange={(e) => setProductId(e.target.value)}
-            className="flex-1 px-4 py-3 border rounded-l-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+            className="flex-1 px-4 py-3 border rounded-l-xl focus:outline-none focus:ring-2 focus:ring-primary text-gray-700"
           />
           <button
-            onClick={handleCheck}
-            className="px-6 py-3 bg-blue-600 text-white rounded-r-xl hover:bg-blue-700 font-semibold"
+            onClick={() => {
+              setResult('');
+              setLoading(true);
+              handleCheck();
+            }}
+            className="px-6 py-3 bg-primary text-white rounded-r-xl hover:bg-primary font-semibold"
           >
             Search
           </button>
         </div>
 
         {result && renderResult(result)}
+      </div>
+      <div className="mt-12 mb-8">
+        <button
+          onClick={handleScrollToAbout}
+          className="px-6 py-3 bg-primary text-white rounded-full hover:bg-white hover:text-primary border-2 border-primary transition-colors duration-300"
+        >
+          About
+        </button>
       </div>
     </div>
   );
