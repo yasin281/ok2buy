@@ -56,7 +56,7 @@ class SwissLegalClassifier:
             prompt_system = (
                 "You are a Swiss border-control agent specializing in product import and classification laws. "
                 "Respond with a plain list of the relevant Swiss laws or regulations that apply to the product. "
-                "List only the law titles from the following legal fragments only. The list of laws should be directly applicable to the product, of the same category. "
+                "List only the law titles from the following legal fragments only. The list of laws should be directly applicable to the product. "
             )
 
             prompt_user = f"""

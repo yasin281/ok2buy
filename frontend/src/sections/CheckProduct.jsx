@@ -259,6 +259,17 @@ const CheckProduct = () => {
         </a>
         
       </div>
+      
+      {/* API Documentation Section */}
+      <div className="mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl max-w-4xl w-full">
+        <h3 className="text-lg font-semibold text-gray-800 mb-3">API Information</h3>
+        <div className="bg-white p-4 rounded-lg border">
+          <p className="text-sm text-gray-600 mb-2">API Endpoint:</p>
+          <code className="text-sm bg-gray-100 px-3 py-2 rounded block text-gray-800 font-mono">
+            GET https://ok2buy.onrender.com/checkproductsapi/product/&lt;productID&gt;
+          </code>
+        </div>
+      </div>
     </div>
   );
 };
