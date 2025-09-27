@@ -68,7 +68,7 @@ class SwissLegalClassifier:
             """
 
         response = self.client.chat.completions.create(
-            model="swiss-ai/Apertus-8B-Instruct-2509",
+            model="HuggingFaceTB/SmolLM3-3B:hf-inference",
             messages=[
                 {"role": "system", "content": prompt_system},
                 {"role": "user", "content": prompt_user}
