@@ -17,10 +17,11 @@ class SwissLegalClassifier:
         if (prompt_type == "classify"):
             prompt_system = (
                 "You are a Swiss border-control agent specializing in product import and classification under Swiss law."
-                "Respond **only** in valid JSON with exactly two fields:  "
+                "Respond **only** in valid JSON with exactly two fields: (again, not Markdown style JSON, but JSON as itself) "
                 "- `classification`: must be one of `legal`, `illegal`, or `permit_or_registration`.  "
                 "- `reasoning`: a concise (max 2 short sentences) explanation that briefly cites the relevant Swiss law or regulation.  "
                 "Do not include any extra text, formatting, or commentary outside the JSON object."
+                "The laws are: {legal_fragments}"
             )
 
             prompt_user = f"""
@@ -28,7 +29,7 @@ class SwissLegalClassifier:
             Classify the product below strictly based on the provided legal fragments.
 
             Product description: {product_description}  
-            Legal fragments: {legal_fragments}  
+          
 
             Respond **only** in valid JSON with exactly two fields:  
             - "classification": must be one of "legal", "illegal", or "permit_or_registration".  
@@ -70,7 +71,8 @@ class SwissLegalClassifier:
             messages=[
                 {"role": "system", "content": prompt_system},
                 {"role": "user", "content": prompt_user}
-            ]
+            ],
+            temperature=0
         )
 
         return response.choices[0].message.content
