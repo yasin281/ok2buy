@@ -72,7 +72,7 @@ class SwissLegalClassifier:
                 {"role": "system", "content": prompt_system},
                 {"role": "user", "content": prompt_user}
             ],
-            temperature=0
+            temperature=1.0,
         )
 
         return response.choices[0].message.content
