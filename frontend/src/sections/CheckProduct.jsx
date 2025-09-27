@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github } from 'lucide-react';
+import { Github, Presentation} from 'lucide-react';
 
 const required_fields = [
   'product_code',
@@ -244,8 +244,20 @@ const CheckProduct = () => {
           title="GitHub Repository"
           className="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full hover:bg-white hover:text-primary border-2 border-primary transition-colors duration-300"
         >
+          
           <Github size={24} />
         </a>
+        <a
+          href="https://www.canva.com/design/DAG0KaoZueE/NhnqJRicRS3sOaI59r4cSA/edit?utm_content=DAG0KaoZueE"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Challenge Speech"
+          className="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full hover:bg-white hover:text-primary border-2 border-primary transition-colors duration-300"
+        >
+          
+          <Presentation size={24} />
+        </a>
+        
       </div>
     </div>
   );
