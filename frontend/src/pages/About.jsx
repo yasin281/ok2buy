@@ -17,7 +17,11 @@ const About = () => {
       <div className="max-w-4xl mx-auto space-y-6 text-gray-700">
         <p>
           This solution is designed to assist shoppers and retailers in the process of acquiring and importing products from international suppliers, which aren't necessarily selling approved products under the local regulations.
-          The main goal of this project is to demonstrate a proof of concept for the Federal Office of Customs and Border Security (FOCBS) to classify products based on their legality under Swiss Law using AI.
+          The main goal of this project is to demonstrate a proof of concept for the Federal Office of Customs and Border Security (FOCBS) to classify products based on their legality under Swiss Law using AI. More info about the challenge can be found clicking on the following image.
+          <br />
+          <a href="https://zh.swiss-ai-weeks.ch/challenges/swissgov3" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+            <img src="challenge.png" alt="Challenge" className="mx-auto my-6 cursor-pointer hover:opacity-80 transition-opacity duration-300 shadow-md rounded-lg" />
+          </a>          
         </p>
 
         <h3 className="text-2xl font-semibold mt-4">Requirements</h3>
@@ -27,6 +31,8 @@ const About = () => {
             <li>Use a <b>product ID</b> as input for the platform.</li>
             <li>The classification should be made with <b>publicly available information</b> and <b>Swiss guidelines</b></li>
             <li>The platform shouldn't <b>violate ToS</b> of the ecommerce platform</li>
+            <li>The platform should provide a <b>reasoning</b> for the classification.</li>
+            <li>The platform should have a <b>web interface</b> and an <b>API gateway</b>.</li>
             <li>The platform should be licensed under <b>MIT license</b>.</li>
           </ul>
         </p>
@@ -56,45 +62,50 @@ const About = () => {
         <p>
           During the development of this project, we encountered several technical limitations that influenced our approach:
           <ul className="list-disc list-inside mt-2 space-y-1">
-            <li>Limited access to certain product data due to API restrictions.</li>
-            <li>Ecommerce ToS compliance limited our ability to scrape data from the websites without breaching said terms. Both platforms require being preauthorized by them to be able to retrieve information, which due to time constraints we were unable to obtain.</li>
-            <li>Vector DBs wouldn't correctly categorize the product information, thus returning irrelevant results.</li>
-            <li>AI models may not always return data in the correct format</li>
+            <li><b>Limited access</b> to certain product data due to API restrictions.</li>
+            <li><b>Ecommerce ToS compliance</b> limited our ability to scrape data from the websites without breaching said terms. Both platforms <b>require being preauthorized</b> by them to be able to retrieve information, which due to time constraints we were unable to obtain.</li>
+            <div className="flex flex-col items-center space-y-4"> 
+              <img src="tos-temu.png" alt="Temu ToS" className="w-7/8 h-auto rounded-lg shadow-md" />
+              <img src="tos-shein.png" alt="Shein ToS" className="w-7/8 h-auto rounded-lg shadow-md" />
+            </div>
+            <li><b>Vector DBs</b> wouldn't correctly categorize the product information, thus returning irrelevant results.</li>
+            <li>AI models may not always return <b>data in the correct format</b></li>
           </ul>
-          Due to that, we had to adapt our approach to a simpler version that only demonstrates the core functionality of the product classification using AI.
+          <br />
+          Due to that, we had to adapt our approach to a simpler version that only demonstrates the <b>core functionality</b> of the product classification using AI.
         </p>
         <h3 className="text-2xl font-semibold mt-4">Current Implementation</h3>
         <p>
           Our current implementation focuses on the core functionality of product classification using AI. We have developed a streamlined version of the system that demonstrates the key features while working within the identified technical limitations.
           The implementation is as follows:
-          // numbered lists
+          
           <ul className="list-decimal list-inside mt-2 space-y-1">
-            <li>The user inputs a product ID through the web interface. Also accepts GET requests to the API Gateway.</li>
-            <li>The system retrieves product information from an existent set of product information (GitHub dataset)</li>
-            <li>The system sanitizes the information so that only relevant information for classification is retained.</li>
-            <li>The sanitized product information is sent to the AI model (Apertus) along with categories to get relevant categories for such product</li>
-            <li>The AI model now processes the relevant laws of that category and the product information to determine its legality, and also provide a reasoning for that decision</li>
+            <li>The user inputs a <b>product ID</b> through the web interface. Also accepts <b>GET requests</b> to the API Gateway.</li>
+            <li>The system retrieves <b>product information</b> from an existent set of product information (GitHub dataset)</li>
+            <li>The system sanitizes the information so that only <b>relevant information</b> for classification is retained.</li>
+            <li>The sanitized product information is sent to the <b>AI model (Apertus)</b> along with categories to get relevant categories for such product</li>
+            <li>The AI model now processes the <b>relevant laws</b> of that category and the <b>product information</b> to determine its legality, and also provide a reasoning for that decision</li>
             <li>The output is handled so it can be presented to the API gateway in a structured format</li>
-            <li>If the request is initiated through the Web UI, the user receives the classification result directly on the interface.</li>
+            <li>If the request is initiated through the Web UI, the user receives the classification result <b>directly on the interface.</b></li>
           </ul>
         </p>
         <h3 className="text-2xl font-semibold mt-4">Tech Stack</h3>
         <p>
           The tech stack used for this project includes:
           <ul className="list-disc list-inside mt-2 space-y-1">
-            <li>Frontend: React, TailwindCSS, Lucide Icons</li>
-            <li>Backend: Python, FastAPI, Uvicorn</li>
-            <li>AI Model: Apertus over Swisscom inference platform</li>
-            <li>LLM Requests: OpenAI API</li>
-            <li>Hosting: Render</li>
+            <li>Frontend: <b>React</b>, TailwindCSS, Lucide Icons</li>
+            <li>Backend: <b>Python</b>, FastAPI, Uvicorn</li>
+            <li>AI Model: <b>Apertus</b> over Swisscom inference platform</li>
+            <li>LLM Requests: <b>OpenAI API</b></li>
+            <li>Hosting: <b>Render</b></li>
           </ul>
         </p>
         <h3 className="text-2xl font-semibold mt-4">Future Work</h3>
         <p>
           <ul className="list-disc list-inside mt-2 space-y-1">
-            <li>Integrate real-time product data retrieval from ecommerce platforms while ensuring compliance with their ToS.</li>
-            <li>Enhance the AI model's accuracy, reliability and speed through continuous training and fine-tuning.</li>
-            <li>Implement a robust caching mechanism to store previously classified products for faster response times.</li>
+            <li>Integrate <b>real-time product data retrieval</b> from ecommerce platforms while ensuring compliance with their ToS.</li>
+            <li>Enhance the <b>AI model's</b> accuracy, reliability and speed through continuous training and fine-tuning.</li>
+            <li>Implement a robust <b>caching mechanism</b> to store previously classified products for faster response times.</li>
             <li>Expand the database of laws and regulations to cover a wider range of product categories and jurisdictions.</li>
             <li>Containerize the application using Docker for easier deployment and scalability.</li>
           </ul>
