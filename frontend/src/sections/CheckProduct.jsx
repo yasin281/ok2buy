@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import { Github, Presentation} from 'lucide-react';
+import React, { useState } from "react";
+import { Github, Presentation } from "lucide-react";
 
 const required_fields = [
-  'product_code',
-  'product_name',
-  'product_description',
-  'shop',
-  'status',
-  'laws',
+  "product_code",
+  "product_name",
+  "product_description",
+  "shop",
+  "status",
+  "laws",
 ];
 
 const handleScrollToAbout = () => {
-  const aboutSection = document.getElementById('about');
+  const aboutSection = document.getElementById("about");
   if (aboutSection) {
-    aboutSection.scrollIntoView({ behavior: 'smooth' });
+    aboutSection.scrollIntoView({ behavior: "smooth" });
   }
 };
 
@@ -26,7 +26,7 @@ const LoadingOverlay = () => {
 };
 
 const CheckProduct = () => {
-  const [productId, setProductId] = useState('');
+  const [productId, setProductId] = useState("");
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -61,7 +61,7 @@ const CheckProduct = () => {
                 </span>
                 <span className="text-gray-600 flex-1">
                   {Array.isArray(item.values)
-                    ? item.values.join(', ')
+                    ? item.values.join(", ")
                     : item.values}
                 </span>
               </div>
@@ -75,10 +75,10 @@ const CheckProduct = () => {
   const handleCheck = async () => {
     try {
       if (!productId.trim()) {
-        throw new Error('Product ID cannot be empty');
+        throw new Error("Product ID cannot be empty");
       }
       if (isNaN(productId)) {
-        throw new Error('Product ID must be a number');
+        throw new Error("Product ID must be a number");
       }
 
       const res = await fetch(
@@ -88,11 +88,11 @@ const CheckProduct = () => {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.detail || 'Failed to fetch product info');
+        throw new Error(data.detail || "Failed to fetch product info");
       }
       setResult({ data });
     } catch (err) {
-      console.error('Error fetching:', err);
+      console.error("Error fetching:", err);
       setResult({ error: err.message });
     } finally {
       setLoading(false);
@@ -101,23 +101,23 @@ const CheckProduct = () => {
 
   const getStatusColor = (status) => {
     switch (status.toLowerCase()) {
-      case 'legal':
-        return 'bg-green-600';
-      case 'permit_or_registration':
-        return 'bg-yellow-500';
-      case 'illegal':
-        return 'bg-red-600';
+      case "legal":
+        return "bg-green-600";
+      case "permit_or_registration":
+        return "bg-yellow-500";
+      case "illegal":
+        return "bg-red-600";
       default:
-        return 'bg-gray-500';
+        return "bg-gray-500";
     }
   };
 
   const renderResult = (response) => {
     if (response.error) {
-      let colorClass = 'text-red-600';
-      if (response.error.includes('404')) colorClass = 'text-blue-600';
-      if (response.error.toLowerCase().includes('failed'))
-        colorClass = 'text-black';
+      let colorClass = "text-red-600";
+      if (response.error.includes("404")) colorClass = "text-blue-600";
+      if (response.error.toLowerCase().includes("failed"))
+        colorClass = "text-black";
 
       return (
         <div
@@ -139,23 +139,23 @@ const CheckProduct = () => {
           const fieldValue = data[field];
           if (!fieldValue) return null;
 
-          if (field === 'product_description' && Array.isArray(fieldValue)) {
+          if (field === "product_description" && Array.isArray(fieldValue)) {
             return renderProductDescription(fieldValue);
           }
 
-          if (field === 'status') {
-            let statusColor = 'text-gray-700';
-            if (fieldValue.toLowerCase() === 'legal')
-              statusColor = 'text-green-600';
-            if (fieldValue.toLowerCase() === 'permit_or_registration')
-              statusColor = 'text-yellow-600';
-            if (fieldValue.toLowerCase() === 'illegal')
-              statusColor = 'text-red-600';
+          if (field === "status") {
+            let statusColor = "text-gray-700";
+            if (fieldValue.toLowerCase() === "legal")
+              statusColor = "text-green-600";
+            if (fieldValue.toLowerCase() === "permit_or_registration")
+              statusColor = "text-yellow-600";
+            if (fieldValue.toLowerCase() === "illegal")
+              statusColor = "text-red-600";
 
             return (
               <div key={field} className="flex items-center gap-2 mb-4">
                 <strong className="capitalize text-gray-700">
-                  {field.replace('_', ' ')}:
+                  {field.replace("_", " ")}:
                 </strong>
                 <span
                   className={`px-3 py-1 rounded-full text-white font-semibold ${getStatusColor(
@@ -168,11 +168,11 @@ const CheckProduct = () => {
             );
           }
           // Laws array
-          if (field === 'laws' && Array.isArray(fieldValue)) {
+          if (field === "laws" && Array.isArray(fieldValue)) {
             return (
               <div key={field} className="mb-4">
-                <strong className="capitalize text-gray-700">Reasoning:</strong>{' '}
-                <span className="text-gray-600">{fieldValue.join(', ')}</span>
+                <strong className="capitalize text-gray-700">Reasoning:</strong>{" "}
+                <span className="text-gray-600">{fieldValue.join(", ")}</span>
               </div>
             );
           }
@@ -180,8 +180,8 @@ const CheckProduct = () => {
           return (
             <div key={field} className="mb-4">
               <strong className="capitalize text-gray-700">
-                {field.replace('_', ' ')}:
-              </strong>{' '}
+                {field.replace("_", " ")}:
+              </strong>{" "}
               <span className="text-gray-600">{fieldValue}</span>
             </div>
           );
@@ -200,9 +200,9 @@ const CheckProduct = () => {
         </h1>
 
         <p className="text-lg text-gray-600 mb-10 text-center max-w-2xl">
-          Enter a product ID to check if the product is{' '}
-          <span className="font-semibold">legal</span>,{' '}
-          <span className="font-semibold">illegal</span>, or requires{' '}
+          Enter a product ID to check if the product is{" "}
+          <span className="font-semibold">legal</span>,{" "}
+          <span className="font-semibold">illegal</span>, or requires{" "}
           <span className="font-semibold">permit/registration</span> in
           Switzerland.
         </p>
@@ -217,7 +217,7 @@ const CheckProduct = () => {
           />
           <button
             onClick={() => {
-              setResult('');
+              setResult("");
               setLoading(true);
               handleCheck();
             }}
@@ -238,13 +238,12 @@ const CheckProduct = () => {
           About
         </button>
         <a
-          href="https://github.com/FardinA143/ok2buy"
+          href="https://github.com/yasin281/ok2buy"
           target="_blank"
           rel="noopener noreferrer"
           title="GitHub Repository"
           className="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full hover:bg-white hover:text-primary border-2 border-primary transition-colors duration-300"
         >
-          
           <Github size={24} />
         </a>
         <a
@@ -254,19 +253,20 @@ const CheckProduct = () => {
           title="Challenge Speech"
           className="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full hover:bg-white hover:text-primary border-2 border-primary transition-colors duration-300"
         >
-          
           <Presentation size={24} />
         </a>
-        
       </div>
-      
+
       {/* API Documentation Section */}
       <div className="mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl max-w-4xl w-full">
-        <h3 className="text-lg font-semibold text-gray-800 mb-3">API Information</h3>
+        <h3 className="text-lg font-semibold text-gray-800 mb-3">
+          API Information
+        </h3>
         <div className="bg-white p-4 rounded-lg border">
           <p className="text-sm text-gray-600 mb-2">API Endpoint:</p>
           <code className="text-sm bg-gray-100 px-3 py-2 rounded block text-gray-800 font-mono">
-            GET https://ok2buy.onrender.com/checkproductsapi/product/&lt;productID&gt;
+            GET
+            https://ok2buy.onrender.com/checkproductsapi/product/&lt;productID&gt;
           </code>
         </div>
       </div>
