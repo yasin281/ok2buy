@@ -107,6 +107,14 @@ The project is hosted on Render: [ok2buy.onrender.com](https://ok2buy-1.onrender
 
 **Note:** The demo is disabled after the hackathon.
 
+## Contributors
+
+| Name   | GitHub                                   |
+| ------ | ---------------------------------------- |
+| Fardin | [@fardin](https://github.com/FardinA143) |
+| Yasin  | [@yasin](https://github.com/yasin281)    |
+| Momin  | [@momin](https://github.com/sOdreams)    |
+
 ## License
 
 MIT License
